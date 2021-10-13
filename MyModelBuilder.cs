@@ -136,7 +136,7 @@ namespace MwmBuilder
                         MyLODDescriptor myLodDescriptor = new MyLODDescriptor()
                         {
                             Distance = loD.Distance,
-                            Model = str2,
+                            Model = configuration.LODs[index].Model,  //str2,   <-- FIx for LODS. Take defined path in the config.,
                             RenderQuality = loD.RenderQuality
                         };
                         if (str2.ToLower() != loD.Model.ToLower())
