@@ -24,7 +24,7 @@ namespace MwmBuilder
     {
       {
         "RescaleFactor",
-         "0.01"
+         "1.0"
       }
     };
         private static MyBuildLoggers m_logger = new MyBuildLoggers();
@@ -172,8 +172,8 @@ namespace MwmBuilder
                 bool overrideLods = false;
                 if (m_args.GetValue("do") != null)
                     overrideLods = true;
-                bool result = true;
-                bool.TryParse(m_args.GetValue("gss"), out result);
+                bool result = false;
+                result = m_args.GetValue("gss") != null; 
                 if (ProcessFile(file, ProgramContext.OutputDir = m_args.GetValue("o"), ProgramContext.m_vars, m_args.GetValue("e") != null, m_args.GetValue("f") != null, m_args.GetValue("checkOpenBoundaries") != null, overrideLods ? m_args.GetValue("do") : m_args.GetValue("d"), overrideLods, result))
                 {
                     lock (ProgramContext.m_logger)

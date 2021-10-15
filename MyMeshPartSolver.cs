@@ -25,8 +25,8 @@ namespace MwmBuilder
 
         public void SetMaterial(Material material)
         {
-            if (material.GetMaterialTextureCount(TextureType.Diffuse) == 0)
-                return;
+            //if (material.GetMaterialTextureCount(TextureType.Diffuse) == 0)
+            //    return;
             int hashCode = material.Name.GetHashCode();
             if (!m_partContainer.ContainsKey(hashCode))
                 return;
